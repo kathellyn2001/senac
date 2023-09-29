@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"> <!--Código em português -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <!-- Inserindo Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+body {
+    background-color: #f4f4f4;
+}
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+</style>
+<body>
+    <div class="container mt-5"> <!--Colocando tudo em um container -->
+        <div class="row"> 
+            <div class="col-md-6 offset-md-3">
+                <div class="card"> <!-- personalização, criação de um card -->
+                    <div class="card-header">Login</div> <!-- titulo do card  --> 
+                    <div class="card-body"> <!-- "corpo" do card -->
+                        <form id="login-form"> <!-- criando uma id para o formulario -->
+                            <div class="form-group"> 
+                                <label for="email">Email</label> <!-- Escrevendo o que irá aparecer no campo -->
+                                <input type="email" class="form-control" id="email" required> 
+                                <!-- referenciando o que deverá ser colocado como informação -->
+                            </div>
+                            <div class="form-group"> 
+                                <label for="password">Senha</label> <!-- Escrevendo o que irá aparecer no campo -->
+                                <input type="password" class="form-control" id="password" required>
+                                <!-- referenciando o que deverá ser colocado como informação -->
+                            </div>
+                            <button type="submit" class="btn btn-primary">Entrar</button> 
+                        </form> <!-- fechando o formul0ario -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase and jQuery libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+
+</html>
