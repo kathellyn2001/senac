@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Quiz sobre Angular</title>
+    <style>
+        body {
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Software livre</h2>
+        <hr>
+        <div class="question">
+            <p>Qual a função do sotfware livre?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" id="answer1" value="gameEngine">
+                <label class="form-check-label" for="answer1"> Um framework para desenvolvimento web</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" id="answer2" value="database">
+                <label class="form-check-label" for="answer2">Uma base de dados</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" id="answer3" value="webFramework">
+                <label class="form-check-label" for="answer3">Os usuários têm a liberdade de executar o software para qualquer finalidade.</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" id="answer4" value="os">
+                <label class="form-check-label" for="answer4">Um sistema operacional</label>
+            </div>
+            <button class="btn btn-primary mt-3" id="checkAnswer">Verificar Resposta</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.6.7/rxjs.umd.min.js"></script>
+
+    <script>
+        const { fromEvent } = rxjs;
+        const button = document.getElementById('checkAnswer');
+
+        const buttonClickObservable = fromEvent(button, 'click');
+
+        buttonClickObservable.subscribe(event => {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
+
+            if (selectedAnswer === "webFramework") {
+                alert('Resposta correta!');
+
+                window.location.href = "pergunta2.html";
+            } else {
+                alert('Resposta errada!');
+					
+				window.location.href = "pagina_derrota.html";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
